@@ -15,7 +15,7 @@ class m151008_162401_create_notification_table extends Migration
             'type' => $this->string()->notNull(),
             'user_id' => $this->integer()->notNull(),
             'seen' => $this->boolean()->notNull(),
-            'created_at' => $this->dateTime()->notNull(),
+            'created_at' => $this->date()->notNull(),
         ]);
 
         /* ORACLE DOESN'T CREATE AUTOMATICALLY AUTOINCREMENT ON PRIMARYKEY() */
