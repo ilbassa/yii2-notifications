@@ -13,7 +13,7 @@ class m151008_162401_create_notification_table extends Migration
             'key' => $this->string()->notNull(),
             'key_id' => $this->integer(),
             'type' => $this->string()->notNull(),
-            'user_id' => $this->integer()->notNull(),
+            'user_id' => $this->string(16)->notNull(),
             'seen' => $this->boolean()->notNull(),
             'created_at' => $this->date()->notNull(),
         ]);
