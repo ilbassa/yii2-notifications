@@ -41,13 +41,13 @@ class NotificationsController extends Controller
      */
     public function actionPoll($seen = 0)
     {
-        $seen = $seen ? 'true' : 'false';
+        $seen = $seen ? 1 : 0;
 
         /** @var Notification $class */
         $class = $this->notificationClass;
         $models = $class::find()
             ->where(['user_id' => $this->user_id])
-            ->andWhere(['or', "seen=$seen", 'flashed=false'])
+            ->andWhere(['or', "seen=$seen", 'flashed=0'])
             ->orderBy('created_at DESC')
             ->all();
 
