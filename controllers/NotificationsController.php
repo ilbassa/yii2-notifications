@@ -47,7 +47,7 @@ class NotificationsController extends Controller
         $class = $this->notificationClass;
         $models = $class::find()
             ->where(['user_id' => $this->user_id])
-            ->andWhere(['or', "seen=$seen", 'flashed=0'])
+            ->andWhere(['or', ['seen'=>$seen] ,['flashed'=>0]])
             ->orderBy('created_at DESC')
             ->all();
 
