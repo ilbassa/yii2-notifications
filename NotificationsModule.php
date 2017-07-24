@@ -86,7 +86,7 @@ class NotificationsModule extends Module
                 'flashed' => 0,
                 'user_id' => $user_id,
                 'key_id' => (string)$key_id,
-                'created_at' => new Expression('NOW()'),
+                'created_at' => new Expression('CURRENT_TIMESTAMP'),
             ]);
             return $instance->save();
         }
